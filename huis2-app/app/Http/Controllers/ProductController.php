@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -28,6 +29,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return view('product.create');
     }
 
     /**
@@ -39,6 +41,15 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $productHuis = new Product();
+        $productHuis->title = $request->title;
+        $productHuis->subtitle = $request->subtitle;
+        $productHuis->price = $request->price;
+        $productHuis->size = $request->size;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $productHuis->image = Storage::url($imagePath);
+        }
     }
 
     /**
@@ -50,6 +61,8 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+        $productHuis = Product::find($id);
+        return view('product.show', ['productHuis' => $productHuis]);
     }
 
     /**
@@ -61,6 +74,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        return view('product.edit', ['productHuis' => Product::find($id)]);
     }
 
     /**
@@ -73,6 +87,17 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $productHuis = Product::find($id);
+        $productHuis->title = $request->title;
+        $productHuis->subtitle = $request->subtitle;
+        $productHuis->price = $request->price;
+        $productHuis->size = $request->size;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $productHuis->image = Storage::url($imagePath);
+        }
+        $productHuis->save();
+        return redirect()->route('product.show', ['product' => $productHuis->id]);
     }
 
     /**
@@ -84,5 +109,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $productHuis = Product::find($id);
+        $productHuis->delete();
+        return redirect()->route('product.index');
     }
 }

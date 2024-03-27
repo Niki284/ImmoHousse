@@ -23,8 +23,8 @@
             </li>
             <li>
                 <div class="product__flex--input">
-                    <input type="text" placeholder="min-kamers" name="minrooms">
-                    <input type="text" placeholder="max-prijs" name="maxprice">
+                    <input type="text" placeholder="min-prijs" name="minprice"">
+                    <input type="text" placeholder="max-prijs" name="maxprice"">
                     
                 </div>
             </li>
@@ -37,9 +37,9 @@
     <ul class="products">
         <?php foreach ($productHuis as $product) : ?>
             <li class="product">
+                <a href="/product/{{$product->id }}">
                 <div class="product__foto">
-                    <img src="pexels-luis-yanez-206172.jpg" alt="Woning 1">
-                    
+                    <img src="<?php echo $product->image; ?>" alt="Woning 1">
                     <div class="product__button">
                         <button>
                             <i class="fas fa-heart" aria-hidden="true"></i>
@@ -48,16 +48,16 @@
                 </div>
                 <div class="product__price">
                     <span>
-                        <?php echo $product->location; ?>
+                    <?php echo $product->city; ?> <?php echo $product->address; ?>
                     </span>
                     <span>€ <?php echo $product->price; ?></span>
                 </div>
                 <div class="product__info">
                 <h3>
-                    <?php echo $product->name; ?>
+                    <?php echo $product->title; ?>
                 </h3>
                 <p>
-                    <?php echo $product->description; ?>
+                    <?php echo $product->subtitle; ?>
                 </p>
             </div>
 
@@ -76,10 +76,13 @@
                         <?php echo $product->size; ?> m²
                     </span>
                 </li>
-            </ul>
+            </ul> 
+                </a>
             </li>
         <?php endforeach; 
         ?>
         
     </ul>
 </div>
+
+@endsection
