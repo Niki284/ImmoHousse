@@ -1,3 +1,139 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+body {
+    /* background-color: red; */
+}
+main{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+    list-style: none;
+}
+
+.product {
+    border: 1px solid #000;
+    color: #000;
+    position: relative;
+}
+.product__foto {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+.product__foto img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.product__price {
+    font-size: 1.5rem;
+    padding: 0.5rem; 
+    display: flex;
+    background-color: #c1c5c8;
+    justify-content:space-between;
+    color: #000;
+}
+.product__price span {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+.product__info{
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+    min-height: 5rem;
+    overflow-x: hidden;
+}
+
+.product__button button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;   
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.5rem;
+    border: none;
+    font-size: large;
+    border-radius: 10px;
+    transition: 0.5s ease  all; 
+    background-color: transparent;
+}
+.product__button button:hover {
+    opacity: 0.8;
+    color: orange;
+}
+.product__button button:active {
+    transform: scale(0.9);
+    color: orange;
+}
+
+.product__mini__list ,.product__filter__list{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    color: #000;
+    padding: 1rem 0;
+    border: 1px solid #000;
+    margin: 1rem 0;
+}
+.product__mini__list 
+ {
+border-bottom: 1px solid #000;
+border-top: 1px solid #000;
+border-left: none;
+border-right: none;
+}
+
+.product__filter__list select , .product__mini__list option , .product__filter__list input{
+    font-size: medium;
+    padding: 0.5rem;
+}
+.product__filter__list select {
+    width: 15vw;
+}
+
+.product__flex--input {
+    border: 1px solid #000;
+    display: flex;
+}
+.product__flex--input input {
+    width: 100%;
+    padding: 0.5rem;
+    border-left: 1px solid #000;
+}
+
+.product__mini__list__btn {
+    font-size: medium;
+    padding: 0.65rem 1rem;
+    border-radius: 1px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease all;
+}
+.product__mini__list__btn:hover {
+    background-color: #c1c5c8;
+    color: black;
+}

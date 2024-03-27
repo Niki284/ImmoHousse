@@ -22,3 +22,5 @@ Dagelijks standup
 Nog te bepalen
 
 
+
+// dat is de slot  van guest  <!-- {{ $slot }} -->
