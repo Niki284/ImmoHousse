@@ -18,6 +18,7 @@ class ProductController extends Controller
     {
         //
         $productHuis = Product::all();
+        
         return view('product.index', ['productHuis' => $productHuis]);
     }
 
@@ -38,18 +39,36 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , $id = null)
     {
         //
+
+        // $request->validate([
+        //     'title' => 'required',
+        //     'subtitle' => 'required',
+        //     'price' => 'required',
+        //     'description' => 'required',
+        //     'size' => 'required',
+        //     'image' => 'required|image'
+        // ]);
+
         $productHuis = new Product();
         $productHuis->title = $request->title;
         $productHuis->subtitle = $request->subtitle;
         $productHuis->price = $request->price;
+        $productHuis->description= $request->description;
         $productHuis->size = $request->size;
+        $productHuis->city = $request->city;
+        $productHuis->address = $request->address;
+        $productHuis->rooms = $request->rooms;
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public');
             $productHuis->image = Storage::url($imagePath);
         }
+
+        $productHuis->save();
+
+        return redirect()->route('product.index')->with('success', 'Product is toegevoegd');
     }
 
     /**

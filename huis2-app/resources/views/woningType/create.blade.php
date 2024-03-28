@@ -1,15 +1,22 @@
 @extends('layouts.base')
 
 @section('content')
+<div class="forms">
+    <div class="formmini">
+        <h1>Voeg hier jouw woning type toe</h1>
 
-<form action="/woningType/store" method="POST">
-    @csrf
-    <div class="form-group">
-        <label for="woningType">Woning Type</label>
-        <input type="text" class="form-control" id="woningType" name="woningType" placeholder="Woning Type">
+        <form action="/woningType/store" method="POST" class="form__categorie">
+            @csrf
+            <div class="form-group">
+                <label for="woningType">Woning Type</label>
+                <input type="text" class="form-control" id="woningType" name="woningType" placeholder="Woning Type">
+            </div>
+            <button type="submit" class="form__categorie__btn">Add</button>
+
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
 
-</form>
+
 
 @endsection

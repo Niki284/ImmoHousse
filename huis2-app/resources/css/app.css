@@ -246,3 +246,101 @@ border-right: none;
 .detail__user__info p{
  font-size: 0.8rem;
 }
+
+
+
+
+
+
+/* Formuliers */
+
+.forms {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    
+}
+.formmini {
+    border:  thick double #444343;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.form__categorie {
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+
+}
+.form__categorie input {
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.form__categorie__btn {
+    padding: 0.65rem 1rem;
+    border-radius: 1px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    width: 100%;
+    border-radius: 5px;
+
+}
+.form__categorie__btn:hover {
+    background-color: #c1c5c8;
+    color: black;
+}
+
+.list__render {
+    margin: 1rem 0;
+}
+
+.list__render__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    margin: 0.5rem 0;
+}
+
+.list__render__item button {
+    padding: 0.5rem;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    border-radius: 5px;
+}
+
+.list__render__item button:hover {
+    background-color: #c1c5c8;
+    color: black;
+}
+.link__add a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: rgb(34, 207, 230, 0.5);
+    transition: 0.5s ease all;
+}
+.link__add a:active {
+    transform: scale(0.9);
+}
+.link__add a:hover {
+    background-color: #c1c5c8;
+    color: black;
+}

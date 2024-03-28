@@ -34,11 +34,15 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('product', ProductController::class)->only(['index', 'show', 'create', 'store']);
 
+Route::post('product/store', [ProductController::class, 'store'])->Middleware('auth');
+Route::put('/product/update/{productId}', [ProductController::class, 'update'])->middleware('auth');
+Route::delete('/product/{productId}', [ProductController::class, 'destroy'])->middleware('auth');
+
 Route::resource('woningType', WoningTypeController::class)->only(['index', 'show', 'create', 'store']);
 
 Route::post('woningType/store', [WoningTypeController::class, 'store'])->Middleware('auth');
 Route::put('/woningType/update/{woningType}', [WoningTypeController::class, 'update'])->middleware('auth');
-Route::delete('/woningType/{woningType}', [WoningTypeController::class, 'destroy'])->middleware('auth');
+Route::delete('/woningType/{typeId}', [WoningTypeController::class, 'destroy'])->middleware('auth');
 
 
 

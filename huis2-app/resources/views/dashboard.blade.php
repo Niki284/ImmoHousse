@@ -11,6 +11,21 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    
+                    <div class="p-6 bg-white border-b border-gray-200">
+                       <nav>
+                       <ul class="list--links flex gap-10 text-[#9595ee] ">
+                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/woningType/create">Maak heer type woning</a></li>
+                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/product/create">Aanmaak woning</a></li>
+                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/woningType/">bekijk all woningen Types</a></li>
+                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/product/">bekijk all woningen</a></li>
+                    </ul>
+                       </nav>
+                    </div>
+                </div>
+
+              
             </div>
         </div>
     </div>

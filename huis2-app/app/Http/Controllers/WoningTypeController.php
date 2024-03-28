@@ -91,10 +91,10 @@ class WoningTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(WoningType $typeId)
     {
-        //
-        $woningType = WoningType::find($id);
-        $woningType->delete();
+        // Heer kan je de woningType verwijderen 
+        $typeId->delete();
+        return redirect()->route('woningType.index')->with('success', 'WoningType is verwijderd');
     }
 }
