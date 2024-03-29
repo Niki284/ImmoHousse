@@ -43,106 +43,53 @@
     </div>
 
     <ul class="products">
-        <li class="product">
-            <div class="product__foto">
-                <img src="pexels-luis-yanez-206172.jpg" alt="Woning 1">
-                <div class="product__button">
-                    <button>
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                    </button>
+    <?php foreach ($productHuis as $product) : ?>
+            <li class="product">
+                <a href="/product/{{$product->id }}">
+                <div class="product__foto">
+                    <img src="<?php echo $product->image; ?>" alt="Woning 1">
+                    <div class="product__button">
+                        <button>
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="product__price">
-                <span>
-                    Zele, Rinkhout 159
-                </span>
-                <span>€ 450.000</span>
-            </div>
-            <div class="product__info">
+                <div class="product__price">
+                    <span>
+                    <?php echo $product->city; ?> <?php echo $product->address; ?>
+                    </span>
+                    <span>€ <?php echo $product->price; ?></span>
+                </div>
+                <div class="product__info">
                 <h3>
-                    WONING TE KOOP
+                    <?php echo $product->title; ?>
                 </h3>
-                <p>Ruime instapklare woning 3 slaapkamers en tuin op 599m²!</p>
+                <p>
+                    <?php echo $product->subtitle; ?>
+                </p>
             </div>
 
-            <ul class="product__mini__list">
+
+                <ul class="product__mini__list">
                 <li>
                     <i class="fas fa-bed" aria-hidden="true"></i>
-                    <span>3</span>
+                    <span>
+                        <?php echo $product->rooms; ?> kamers
+                    </span>
+                    
                 </li>
                 <li>
                     <i class="fas fa-bath" aria-hidden="true"></i>
-                    <span>1</span>
+                     <span>
+                        <?php echo $product->size; ?> m²
+                    </span>
                 </li>
-            </ul>
-        </li>
-        <li class="product">
-            <div class="product__foto">
-                <img src="pexels-luis-yanez-206172.jpg" alt="Woning 1">
-                <div class="product__button">
-                    <button>
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="product__price">
-                <span>
-                    Zele, Rinkhout 159
-                </span>
-                <span>€ 450.000</span>
-            </div>
-            <div class="product__info">
-                <h3>
-                    WONING TE KOOP
-                </h3>
-                <p>Ruime instapklare woning 3 slaapkamers en tuin op 599m²!</p>
-            </div>
-
-            <ul class="product__mini__list">
-                <li>
-                    <i class="fas fa-bed" aria-hidden="true"></i>
-                    <span>3</span>
-                </li>
-                <li>
-                    <i class="fas fa-bath" aria-hidden="true"></i>
-                    <span>1</span>
-                </li>
-            </ul>
-        </li>
-        <li class="product">
-            <div class="product__foto">
-                <img src="pexels-luis-yanez-206172.jpg" alt="Woning 1">
-                <div class="product__button">
-                    <button>
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="product__price">
-                <span>
-                    Zele, Rinkhout 159
-                </span>
-                <span>€ 450.000</span>
-            </div>
-            <div class="product__info">
-                <h3>
-                    WONING TE KOOP
-                </h3>
-                <p>Ruime instapklare woning 3 slaapkamers en tuin op 599m²!</p>
-            </div>
-
-            <ul class="product__mini__list">
-                <li>
-                    <i class="fas fa-bed" aria-hidden="true"></i>
-                    <span>3</span>
-                </li>
-                <li>
-                    <i class="fas fa-bath" aria-hidden="true"></i>
-                    <span>1</span>
-                </li>
-            </ul>
-        </li>
-</div>
+            </ul> 
+                </a>
+            </li>
+        <?php endforeach; 
+        ?>
+    </ul>
 </main>
 
 @endsection

@@ -110,7 +110,11 @@ class ProductController extends Controller
         $productHuis->title = $request->title;
         $productHuis->subtitle = $request->subtitle;
         $productHuis->price = $request->price;
+        $productHuis->description= $request->description;
         $productHuis->size = $request->size;
+        $productHuis->city = $request->city;
+        $productHuis->address = $request->address;
+        $productHuis->rooms = $request->rooms;
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public');
             $productHuis->image = Storage::url($imagePath);

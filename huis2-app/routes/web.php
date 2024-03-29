@@ -3,7 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\VoorziningenController;
 use App\Http\Controllers\WoningTypeController;
+use App\Models\Product;
+use App\Models\WoningType;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +22,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome' , ['productHuis' => Product::all(), 'woningType' => WoningType::all()]
+    ); 
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -43,6 +48,15 @@ Route::resource('woningType', WoningTypeController::class)->only(['index', 'show
 Route::post('woningType/store', [WoningTypeController::class, 'store'])->Middleware('auth');
 Route::put('/woningType/update/{woningType}', [WoningTypeController::class, 'update'])->middleware('auth');
 Route::delete('/woningType/{typeId}', [WoningTypeController::class, 'destroy'])->middleware('auth');
+
+Route::resource('voorziningen', VoorziningenController::class)->only(['index', 'show', 'create', 'store']);
+
+Route::post('voorziningen/store', [VoorziningenController::class, 'store'])->Middleware('auth');
+Route::put('/voorziningen/update/{voorzining}', [VoorziningenController::class, 'update'])->middleware('auth');
+Route::delete('/voorziningen/{voorziningId}', [VoorziningenController::class, 'destroy'])->middleware('auth');
+
+
+
 
 
 
