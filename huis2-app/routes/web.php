@@ -43,7 +43,10 @@ Route::post('product/store', [ProductController::class, 'store'])->Middleware('a
 Route::put('/product/update/{productId}', [ProductController::class, 'update'])->middleware('auth');
 Route::delete('/product/{productId}', [ProductController::class, 'destroy'])->middleware('auth');
 
-Route::resource('woningType', WoningTypeController::class)->only(['index', 'show', 'create', 'store']);
+Route::resource('/woningType', WoningTypeController::class)->only(['index', 'show', 'create', 'store']);
+
+// // tweede optie
+//  Route::resource('/woningType', WoningTypeController::class)->only(['index', 'show', 'create', 'store'])->names('woningType');
 
 Route::post('woningType/store', [WoningTypeController::class, 'store'])->Middleware('auth');
 Route::put('/woningType/update/{woningType}', [WoningTypeController::class, 'update'])->middleware('auth');
