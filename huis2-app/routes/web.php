@@ -3,9 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\TechnischController;
 use App\Http\Controllers\VoorziningenController;
+use App\Http\Controllers\WoningController;
 use App\Http\Controllers\WoningTypeController;
 use App\Models\Product;
+use App\Models\Woning;
 use App\Models\WoningType;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome' , ['productHuis' => Product::all(), 'woningType' => WoningType::all()]
+    return view('welcome' , ['productHuis' => Product::all(), 'woningType' => WoningType::all(), 'woningHuis' => Woning::all()]
     ); 
 });
 
@@ -37,11 +40,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('product', ProductController::class)->only(['index', 'show', 'create', 'store']);
+// Route::resource('product', ProductController::class)->only(['index', 'show', 'create', 'store']);
 
-Route::post('product/store', [ProductController::class, 'store'])->Middleware('auth');
-Route::put('/product/update/{productId}', [ProductController::class, 'update'])->middleware('auth');
-Route::delete('/product/{productId}', [ProductController::class, 'destroy'])->middleware('auth');
+// Route::post('product/store', [ProductController::class, 'store'])->Middleware('auth');
+// Route::put('/product/update/{productId}', [ProductController::class, 'update'])->middleware('auth');
+// Route::delete('/product/{productId}', [ProductController::class, 'destroy'])->middleware('auth');
+
+Route::resource('woning', WoningController::class)->only(['index', 'show', 'create', 'store']);
+Route::post('woning/store', [WoningController::class, 'store'])->Middleware('auth');
+Route::put('/woning/update/{woningId}', [WoningController::class, 'update'])->middleware('auth');
+Route::delete('/woning/{woningId}', [WoningController::class, 'destroy'])->middleware('auth');
+
+
 
 Route::resource('/woningType', WoningTypeController::class)->only(['index', 'show', 'create', 'store']);
 
@@ -59,7 +69,9 @@ Route::put('/voorziningen/update/{voorzining}', [VoorziningenController::class, 
 Route::delete('/voorziningen/{voorziningId}', [VoorziningenController::class, 'destroy'])->middleware('auth');
 
 
-
+Route::resource('technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
+Route::put('/technisch/update/{technischId}', [TechnischController::class, 'update'])->middleware('auth');
+Route::delete('/technisch/{technischId}', [TechnischController::class, 'destroy'])->middleware('auth');
 
 
 

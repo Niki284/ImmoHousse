@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('product.create');
+        return view('product.create', ['voorziningen' => DB::table('woning_types')->get()]);
     }
 
     /**
@@ -67,7 +67,6 @@ class ProductController extends Controller
         }
 
         $productHuis->save();
-
         return redirect()->route('product.index')->with('success', 'Product is toegevoegd');
     }
 

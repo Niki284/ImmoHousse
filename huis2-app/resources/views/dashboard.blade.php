@@ -17,11 +17,15 @@
                        <nav>
                        <ul class="list--links flex gap-10 text-[#9595ee] ">
                         <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/woningType/create">Maak heer type woning</a></li>
-                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/product/create">Aanmaak woning</a></li>
+                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/woning/create">Aanmaak woning</a></li>
                         <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/woningType/">bekijk all woningen Types</a></li>
-                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/product/">bekijk all woningen</a></li>
+                        <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/woning/">bekijk all woningen</a></li>
                         <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/voorziningen/create">Voeg voorziningen toe</a></li>
                         <li><a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/voorziningen/">bekijk voorziningen</a></li>
+                        <li>
+                        <a class="p-2 hover:text-blue-600 text-ellipsis hover:bg-[rgb(204,214,255)]" href="/technisch/">bekijk technisch</a></li>
+                               
+                        </li>
                     </ul>
                        </nav>
                     </div>
