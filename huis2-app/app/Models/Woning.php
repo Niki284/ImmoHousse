@@ -13,4 +13,14 @@ class Woning extends Model
     {
         return $this->belongsTo(WoningType::class , 'woning_type_id' , 'id');
     }
+
+    public function voorziningen()
+    {
+        return $this->belongsToMany(Voorziningen::class);
+    }
+
+    public function technisches()
+    {
+        return $this->hasOne(Technisch::class , 'woning_id' , 'id');
+    }
 }

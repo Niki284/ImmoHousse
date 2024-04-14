@@ -45,14 +45,7 @@
                 <input type="text" class="form-control" id="size" name="size" placeholder="Grootte">
             </div>
 
-            <div class="form-group">
-                <label for="woning_type_id">Woning Type</label>
-                <select name="woning_type_id" id="woning_type_id" class="form-control">
-                    @foreach($woningTypes as $woningType)
-                    <option value="{{$woningType->id}}">{{$woningType->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+            
             <button type="submit" class="form__categorie__btn">Add</button>
 
         </form>

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('technisches', function (Blueprint $table) {
             $table->id();
+            $table->integer('woning_id');
             $table->string('bouwjaar');
             $table->string('algemene staat');
             $table->string('renovatieverplichting');

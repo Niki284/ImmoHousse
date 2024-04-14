@@ -7,6 +7,8 @@
 
         <form action="/voorziningen/store" method="POST" class="form__categorie">
             @csrf
+
+            <input type="hidden" name="woning_id" value="{{$woning_id}}">
             <div class="form-group">
                 <label for="voorziningen">voorzining</label>
                 <input type="text" class="form-control" id="voorzining" name="voorzining" placeholder="Woning voorzining">

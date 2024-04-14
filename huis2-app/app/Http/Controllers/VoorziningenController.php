@@ -24,10 +24,10 @@ class VoorziningenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($woning_id)
     {
         // heer kan je voorziningen toevoegen
-        return view('voorziningen.create' , ['voorziningen' => Voorziningen::all()]);
+        return view('voorziningen.create' , ['voorziningen' => Voorziningen::all(), 'woning_id' => $woning_id]);
     }
 
     /**
@@ -36,10 +36,11 @@ class VoorziningenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id = null)
     {
         // heer kan je voorziningen opslaan
         $voorziningen = new Voorziningen();
+        $voorziningen->woning_id = $request->input('woning_id');
         $voorziningen->voorzining = $request->voorzining;
         $voorziningen->save();
         return redirect()->route('voorziningen.index')->with('success', 'Voorziningen is toegevoegd');

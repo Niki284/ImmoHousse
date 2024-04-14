@@ -24,10 +24,10 @@ class TechnischController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($woning_id)
     {
         //
-        return view('technisch.create', ['technisch' => Technisch::all()]);
+        return view('technisch.create', ['technisch' => Technisch::all() , 'woning_id' => $woning_id]);
 
     }
 
@@ -37,7 +37,7 @@ class TechnischController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request ,$id = null)
     {
         // TECHNISCH DATA OPSLAAN
 
@@ -56,6 +56,7 @@ class TechnischController extends Controller
 
 
         $technisch = new Technisch();
+        $technisch->woning_id = $request->input('woning_id');
         $technisch->bouwjaar = $request->bouwjaar;
         $technisch->algemene_staat = $request->algemene_staat;
         $technisch->renovatieverplichting = $request->renovatieverplichting;

@@ -41,7 +41,36 @@
         </div>
     </div>
 
+    <a href="/woning/{{$woningHuis->id}}/addvoorziningen">add voorzing</a>
+    <h2>
+        Voorzieningen
+    </h2>
+   
+    <a href="/woning/{{$woningHuis->id}}/addtechnisch">Voeg technisches</a>
+    
 
+    <h2>
+        Technisch
+    </h2>
+    <ul>
+        @foreach ($woningHuis->technisches as $technisch)
+            <li>
+                <p>Bouwjaar: {{ $technisch->bouwjaar }}</p>
+                <p>Algemene staat: {{ $technisch->algemene_staat }}</p>
+                <p>Renovatieverplichting: {{ $technisch->renovatieverplichting }}</p>
+                <p>Overstromingsgevoeligheid: {{ $technisch->overstromingsgevoeligheid }}</p>
+                <p>Afgebakende zone: {{ $technisch->afgebakende_zone }}</p>
+                <p>G(ebouw)-score: {{ $technisch->G_ebouw_score }}</p>
+                <p>P(erceel)-score: {{ $technisch->P_erceel_score }}</p>
+                <p>Certificaat elektriciteit: {{ $technisch->certificaat_elektriciteit }}</p>
+                <p>Lift: {{ $technisch->lift }}</p>
+                <p>EPC: {{ $technisch->EPC }}</p>
+            </li>
+        @endforeach
+    </ul>
+
+
+    
 
 
     

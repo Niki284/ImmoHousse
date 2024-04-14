@@ -10,6 +10,9 @@
 
         <form action="{{ route('technisch.store') }}" method="POST" class="form__categorie">
             @csrf
+
+                <input type="hidden" class="form-control" id="woning_id" name="woning_id" value="{{$woning_id}}">
+
             <div class="form-group">
                 <label for="bouwjaar">Bouwjaar</label>
                 <input type="text" class="form-control" id="bouwjaar" name="bouwjaar" placeholder="Bouwjaar">

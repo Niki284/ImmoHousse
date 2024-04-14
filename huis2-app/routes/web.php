@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome' , ['productHuis' => Product::all(), 'woningType' => WoningType::all(), 'woningHuis' => Woning::all()]
+    return view('welcome' ,[ 'woningType' => WoningType::all(), 'woningHuis' => Woning::all()]
     ); 
 });
 
@@ -51,6 +51,13 @@ Route::post('woning/store', [WoningController::class, 'store'])->Middleware('aut
 Route::put('/woning/update/{woningId}', [WoningController::class, 'update'])->middleware('auth');
 Route::delete('/woning/{woningId}', [WoningController::class, 'destroy'])->middleware('auth');
 
+Route::get('/woning/{id}/addvoorziningen', [VoorziningenController::class, 'create'])->middleware('auth');
+Route::get('/woning/{id}/addtechnisch', [TechnischController::class, 'create'])->middleware('auth');
+
+
+
+
+
 
 
 Route::resource('/woningType', WoningTypeController::class)->only(['index', 'show', 'create', 'store']);
@@ -67,6 +74,8 @@ Route::resource('voorziningen', VoorziningenController::class)->only(['index', '
 Route::post('voorziningen/store', [VoorziningenController::class, 'store'])->Middleware('auth');
 Route::put('/voorziningen/update/{voorzining}', [VoorziningenController::class, 'update'])->middleware('auth');
 Route::delete('/voorziningen/{voorziningId}', [VoorziningenController::class, 'destroy'])->middleware('auth');
+
+
 
 
 Route::resource('technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');

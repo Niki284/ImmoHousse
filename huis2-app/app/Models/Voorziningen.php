@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Voorziningen extends Model
 {
     use HasFactory;
+
+    public function woning()
+    {
+        return $this->belongsToMany(Woning::class );
+    }
 }
