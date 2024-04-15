@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.guest')
 
 @section('content')
 
@@ -44,6 +44,14 @@
     <a href="/woning/{{$woningHuis->id}}/addvoorziningen">add voorzing</a>
     <h2>
         Voorzieningen
+        <?php 
+         
+        ?>
+        <ul>
+            @foreach($woningHuis->voorziningen as $voorzinings)
+                <li>{{ $voorzinings->voorzining }}</li>
+            @endforeach
+        </ul>
     </h2>
    
     <a href="/woning/{{$woningHuis->id}}/addtechnisch">Voeg technisches</a>
@@ -56,41 +64,9 @@
         Hieronder vindt u de technische gegevens van de woning.
        
     </p>
-    <ul>
-        @foreach ($technisches as $technisch)
-            <li>
-                <p>
-                    Bouwjaar: {{ $technisch->bouwjaar }}
-                </p>
-                <p>
-                    Algemene staat: {{ $technisch->algemene_staat }}
-                </p>
-                <p>
-                    Renovatieverplichting: {{ $technisch->renovatieverplichting }}
-                </p>
-                <p>
-                    Overstromingsgevoeligheid: {{ $technisch->overstromingsgevoeligheid }}
-                </p>
-                <p>
-                    Afgebakende zone: {{ $technisch->afgebakende_zone }}
-                </p>
-                <p>
-                    Gebouw score: {{ $technisch->G_ebouw_score }}
-                </p>
-                <p>
-                    Perceel score: {{ $technisch->P_erceel_score }}
-                </p>
-                <p>
-                    Certificaat elektriciteit: {{ $technisch->certificaat_elektriciteit }}
-                </p>
-                <p>
-                    Lift: {{ $technisch->lift }}
-                </p>
-                <p>
-                    EPC: {{ $technisch->EPC }}
-                </p>
-        @endforeach
-    </ul>
+  
+    <h2>{{ $woningHuis->technisches->lift }}</h2>
+
 
 
     

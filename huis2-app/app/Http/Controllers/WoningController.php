@@ -82,10 +82,12 @@ class WoningController extends Controller
     {
         //
         $woningHuis = Woning::find($id);
-        $technisches = $woningHuis->technisches;
-        $technisches= Technisch::all();
-        $woningHuis = Woning::with('technisches')->find($id);
-        return view('woning.show', ['woningHuis' => $woningHuis, 'technisches' => $technisches]);
+ 
+        
+        // $technisches = $woningHuis->technisches;
+        // $technisches= Technisch::all();
+        // $woningHuis = Woning::with('technisches')->find($id);
+        return view('woning.show', ['woningHuis' => $woningHuis]);
     }
 
     /**

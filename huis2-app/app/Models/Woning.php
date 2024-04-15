@@ -23,4 +23,10 @@ class Woning extends Model
     {
         return $this->hasOne(Technisch::class , 'woning_id' , 'id');
     }
+
+    public function favorite()
+    {
+        return $this->hasOne(Favorite::class);
+    }
+    
 }

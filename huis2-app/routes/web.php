@@ -78,7 +78,7 @@ Route::delete('/voorziningen/{voorziningId}', [VoorziningenController::class, 'd
 
 
 
-Route::resource('technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
+Route::resource('/technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
 Route::put('/technisch/update/{technischId}', [TechnischController::class, 'update'])->middleware('auth');
 Route::delete('/technisch/{technischId}', [TechnischController::class, 'destroy'])->middleware('auth');
 
