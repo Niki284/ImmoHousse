@@ -7,12 +7,10 @@
     <div class="formmini">
         <h1>Voeg hier jouw product toe</h1>
 
-        <form action="{{ route('/technisch.update') }}" method="POST" class="form__categorie">
+        <form action="{{ route('/technisch.update', ['id'=> $technisch->id]) }}" method="POST" class="form__categorie">
             @csrf
             @method('put')
                 
-
-
             <div class="form-group">
                 <label for="bouwjaar">Bouwjaar</label>
                 <input type="text" class="form-control" id="bouwjaar" name="bouwjaar" placeholder="Bouwjaar">
