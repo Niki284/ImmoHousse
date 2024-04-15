@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Technisch;
 use App\Models\Woning;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
@@ -81,7 +82,10 @@ class WoningController extends Controller
     {
         //
         $woningHuis = Woning::find($id);
-        return view('woning.show', ['woningHuis' => $woningHuis]);
+        $technisches = $woningHuis->technisches;
+        $technisches= Technisch::all();
+        $woningHuis = Woning::with('technisches')->find($id);
+        return view('woning.show', ['woningHuis' => $woningHuis, 'technisches' => $technisches]);
     }
 
     /**

@@ -43,9 +43,9 @@
     </div>
 
     <ul class="products">
-    <?php foreach ($productHuis as $product) : ?>
+    <?php foreach ($woningHuis as $product) : ?>
             <li class="product">
-                <a href="/product/{{$product->id }}">
+                <a href="/woning/{{$product->id }}">
                 <div class="product__foto">
                     <img src="<?php echo $product->image; ?>" alt="Woning 1">
                     <div class="product__button">

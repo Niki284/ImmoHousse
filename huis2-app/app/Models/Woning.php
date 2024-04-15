@@ -11,12 +11,12 @@ class Woning extends Model
 
     public function woningTypes()
     {
-        return $this->belongsTo(WoningType::class , 'woning_type_id' , 'id');
+        return $this->hasMany(WoningType::class , 'woning_id' , 'id');
     }
 
     public function voorziningen()
     {
-        return $this->belongsToMany(Voorziningen::class);
+        return $this->hasMany(Voorziningen::class , 'woning_id' , 'id');
     }
 
     public function technisches()

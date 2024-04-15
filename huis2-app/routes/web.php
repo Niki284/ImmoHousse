@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome' ,[ 'woningType' => WoningType::all(), 'woningHuis' => Woning::all()]
+    return view('welcome' ,[ 'woningHuis' => Woning::all()]
     ); 
 });
 
