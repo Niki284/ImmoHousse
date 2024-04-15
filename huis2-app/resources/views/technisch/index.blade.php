@@ -32,6 +32,12 @@
                     <input type="text" name="lift" value="{{$technisch->lift}}">
                     <label for="EPC">EPC</label>
                     <input type="text" name="EPC" value="{{$technisch->EPC}}">
+                    <label for="totale_opp_grond">totale_opp_grond</label>
+                    <input type="text" name="totale_opp_grond" value="{{$technisch->totale_opp_grond}}">
+                    <label for="bouw_opp_grond">bouw_opp_grond</label>
+                    <input type="text" name="bouw_opp_grond" value="{{$technisch->bouw_opp_grond}}">
+
+                    <button type="submit"> Update </button>
                     </form>
                 <form method="post" action="/technisch/{{$technisch->id}}">
                     @csrf

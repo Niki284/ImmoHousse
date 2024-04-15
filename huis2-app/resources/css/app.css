@@ -344,3 +344,86 @@ border-right: none;
     background-color: #c1c5c8;
     color: black;
 }
+
+
+/* Gegevens */
+
+.gegevens {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+.gegevens--flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    margin: 1rem 0;
+}
+.gegevens--flex a {
+    padding: 0.5rem;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    border-radius: 5px;
+}
+.gegevens--flex a:hover {
+    background-color: rgb(0, 128, 0 ,0.5);
+}
+.gegevens--flex a:active {
+    transform: scale(0.9);
+}
+.gegevens .gegevens--richt {
+    background-color: rgb(34, 109, 230)
+}
+.gegevens .gegevens--richt:hover {
+    background-color: rgb(34, 109, 230 ,0.5);
+}
+
+.gegevens__title {
+    display: flex;
+    color: red;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.gegevens .gegevens__title--svg svg {
+    margin-right: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+    border: 1px solid #000;
+}
+
+.gegevens__list {
+    display: flex;
+    gap: 1rem;
+}
+.gegevens__list li{
+    display: flex;
+}
+
+.gegevens__list--tech {
+   display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Verdeel de ruimte tussen de elementen in de rij */
+}
+
+.gegevens__list--tech li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    
+}
+
+.gegevens__list--tech span {
+    padding: 5px;border: 1px solid #000;
+}
+/*
+.gegevens__list--tech  li:nth-child(odd) {
+    background-color: #f2f2f2; // Lichtgrijze achtergrondkleur voor oneven rijen
+}
+*/

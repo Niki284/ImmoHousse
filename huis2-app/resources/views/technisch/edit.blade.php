@@ -1,5 +1,4 @@
 
-
 @extends('layouts.base')
 
 @section('content')
@@ -8,10 +7,11 @@
     <div class="formmini">
         <h1>Voeg hier jouw product toe</h1>
 
-        <form action="{{ route('technisch.store') }}" method="POST" class="form__categorie">
+        <form action="{{ route('/technisch.update') }}" method="POST" class="form__categorie">
             @csrf
+            @method('put')
+                
 
-                <input type="hidden" class="form-control" id="woning_id" name="woning_id" value="{{$woning_id}}">
 
             <div class="form-group">
                 <label for="bouwjaar">Bouwjaar</label>
@@ -61,12 +61,10 @@
                 <label for="bouw_opp_grond">Bouw opp grond</label>
                 <input type="text" class="form-control" id="bouw_opp_grond" name="bouw_opp_grond" placeholder="Bouw opp grond">
             </div>
-            
-            
-            
-            <button type="submit" class="form__categorie__btn">Add</button>
-
+        
+            <button type="submit" class="form__categorie__btn">Update</button>
         </form>
+
     </div>
 </div>
 

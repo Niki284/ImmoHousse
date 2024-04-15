@@ -67,6 +67,8 @@ class TechnischController extends Controller
         $technisch->certificaat_elektriciteit = $request->certificaat_elektriciteit;
         $technisch->lift = $request->lift;
         $technisch->EPC = $request->EPC;
+        $technisch->totale_opp_grond = $request->totale_opp_grond;
+        $technisch->bouw_opp_grond = $request->bouw_opp_grond;
         $technisch->save();
         return redirect()->route('technisch.index')->with('success', 'Technisch is toegevoegd');
     }
@@ -119,6 +121,8 @@ class TechnischController extends Controller
         $technisch->certificaat_elektriciteit = $request->certificaat_elektriciteit;
         $technisch->lift = $request->lift;
         $technisch->EPC = $request->EPC;
+        $technisch->totale_opp_grond = $request->totale_opp_grond;
+        $technisch->bouw_opp_grond = $request->bouw_opp_grond;
         $technisch->save();
         return redirect()->route('technisch.index')->with('success', 'Technisch is aangepast');
 

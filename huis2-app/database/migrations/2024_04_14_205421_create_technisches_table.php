@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('certificaat_elektriciteit');
             $table->string('lift');
             $table->string('EPC');
+            $table->string('totale_opp_grond');
+            $table->string('bouw_opp_grond');
             $table->timestamps();
         });
     }

@@ -53,6 +53,7 @@ Route::delete('/woning/{woningId}', [WoningController::class, 'destroy'])->middl
 
 Route::get('/woning/{id}/addvoorziningen', [VoorziningenController::class, 'create'])->middleware('auth');
 Route::get('/woning/{id}/addtechnisch', [TechnischController::class, 'create'])->middleware('auth');
+Route::get('/woning/{id}/edittechnisch', [TechnischController::class, 'edit'])->middleware('auth');
 
 
 
