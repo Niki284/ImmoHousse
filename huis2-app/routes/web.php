@@ -54,7 +54,7 @@ Route::delete('/woning/{woningId}', [WoningController::class, 'destroy'])->middl
 Route::get('/woning/{id}/addvoorziningen', [VoorziningenController::class, 'create'])->middleware('auth');
 Route::get('/woning/{id}/addtechnisch', [TechnischController::class, 'create'])->middleware('auth');
 Route::get('/woning/{id}/edittechnisch', [TechnischController::class, 'edit'])->middleware('auth');
-Route::put('/technisch/update/{technischId}', [TechnischController::class, 'update'])->middleware('auth')->name('technisch.update');
+Route::put('/technisch/update/{id}', [TechnischController::class, 'update'])->middleware('auth')->name('technisch.update');
 
 
 
@@ -80,7 +80,6 @@ Route::delete('/voorziningen/{voorziningId}', [VoorziningenController::class, 'd
 
 
 Route::resource('/technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
-Route::put('/technisch/update/{technischId}', [TechnischController::class, 'update'])->middleware('auth');
 Route::delete('/technisch/{technischId}', [TechnischController::class, 'destroy'])->middleware('auth');
 
 

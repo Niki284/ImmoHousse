@@ -93,7 +93,7 @@ class TechnischController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, $technischId)
+    public function edit($id)
     {
         //
         $technisch = Technisch::find($id);
