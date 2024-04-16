@@ -11,6 +11,6 @@ class Indeling extends Model
     
     public function woning()
     {
-        return $this->belongsTo(Woning::class);
+        return $this->belongsTo(Woning::class , 'woning_id' , 'id');
     }
 }

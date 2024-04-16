@@ -44,8 +44,9 @@
     <div class="gegevens">
         <div class="gegevens--flex">
             <a href="/woning/{{$woningHuis->id}}/addindeling">add Indeling</a>
-            <a href="/woning/{{$woningHuis->id}}/editindeling" class="gegevens--richt">edit Indeling</a>
+            <a href="/woning/{{$woningHuis->id}}/editvoorzingen" class="gegevens--richt">edit voorzing</a>
         </div>
+       
 
         <h2 class="gegevens__title">
             <span class="gegevens__title--svg"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -56,22 +57,25 @@
                 Indelingen
             </span>
         </h2>
-
-        <ul class="gegevens__list gegevens__list--tech">
+        <?php 
+                        if($woningHuis->indeling == null ){
+                           return redirect()->route('indeling.create');
+                        }
+                    ?>
+        <ul>
             <li>
                 Ruimte
             </li>
             <li>
                 Verdieping
-            </li>
         </ul>
-        <ul class="gegevens__list--tech">
+        <ul class="gegevens__list gegevens__list--tech">
             <li>
                 <span>
                     Badkamer:
                 </span>
                 <span>
-                    {{ $woningHuis->indeling->badkamer  }}
+                    {{ $woningHuis->indeling->badkamer }}
                 </span>
             </li>
             <li>
@@ -146,31 +150,6 @@
                     {{ $woningHuis->indeling->toilet }}
                 </span>
             </li>
-            <li>
-                <span>
-                    Tuin:
-                </span>
-                <span>
-                    {{ $woningHuis->indeling->tuin }}
-                </span>
-            </li>
-            <li>
-                <span>
-                    Wasplaats:
-                </span>
-                <span>
-                    {{ $woningHuis->indeling->wasplaats }}
-                </span>
-            </li>
-            <li>
-                <span>
-                    Zolder:
-                </span>
-                <span>
-                    {{ $woningHuis->indeling->zolder }}
-                </span>
-            </li>
-        </ul>
 
     </div>
 
@@ -212,7 +191,11 @@
             <a href="/woning/{{$woningHuis->id}}/addtechnisch">Voeg technisches</a>
             <a href="/woning/{{$woningHuis->id}}/edittechnisch" class="gegevens--richt">edit technisches</a>
         </div>
-
+        <?php 
+                        if($woningHuis->technisches == null ){
+                           return redirect()->route('technisch.create');
+                        }
+                    ?>
         <h2 class="gegevens__title">
             <span class="gegevens__title--svg"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />

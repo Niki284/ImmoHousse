@@ -82,7 +82,7 @@ class WoningController extends Controller
     {
         //
         $woningHuis = Woning::find($id);
- 
+       
         
         // $technisches = $woningHuis->technisches;
         // $technisches= Technisch::all();
