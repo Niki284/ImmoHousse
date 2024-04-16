@@ -101,10 +101,17 @@ class WoningController extends Controller
     {
         //
         $woningHuis = Woning::find($id);
-        // if ($woningHuis->indeling == null) {
-        //     // Als het null is, doorsturen naar de indeling.create route
-        //     return redirect()->route('indeling.create');
-        // }
+        if ($woningHuis->indeling == $id  ) {
+            // Als het null is, doorsturen naar de indeling.create route
+            
+            return redirect()->route('indeling.create');
+        }
+
+        if ($woningHuis->technisch == $id  ) {
+            // Als het null is, doorsturen naar de technisch.create route
+            
+            return redirect()->route('technisch.create');
+        }
         return view('woning.show', ['woningHuis' => $woningHuis]);
     }
 
