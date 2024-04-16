@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Technisch;
 use App\Models\Woning;
+use App\Models\WoningType;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,10 +18,21 @@ class WoningController extends Controller
      */
     public function index()
     {
-        //
-        $woningHuis = Woning::all();
-        return view('woning.index', ['woningHuis' => $woningHuis]);
+        $woningHuis = Woning::query();
 
+    $search = request('search');
+    if($search) {
+        $woningHuis->where('size', 'like', '%' . $search . '%');
+    }
+
+    $filter = request('filter');
+    if($filter) {
+        $woningHuis->where('woning_type', $filter);
+    }
+
+    $woningHuis = $woningHuis->get();
+
+    return view('woning.index', ['woningHuis' => $woningHuis ,  'search' => $search , 'filter' => $filter]);
     }
 
     /**
@@ -31,7 +43,7 @@ class WoningController extends Controller
     public function create()
     {
         //
-        return view('woning.create', ['woningHuis' => Woning::all()]);
+        return view('woning.create', ['woningHuis' => Woning::all() , 'woning_types'=>WoningType::all()]);
     }
 
     /**
@@ -61,6 +73,7 @@ class WoningController extends Controller
         $woningHuis->address = $request->address;
         $woningHuis->rooms = $request->rooms;
         $woningHuis->size = $request->size;
+        $woningHuis->woning_type_id = $request->woning_type_id;
         if($request->hasFile('image')){
             $imagePath = $request->file('image')->store('images', 'public');
             $woningHuis->image = Storage::url($imagePath);
@@ -82,11 +95,10 @@ class WoningController extends Controller
     {
         //
         $woningHuis = Woning::find($id);
-       
-        
-        // $technisches = $woningHuis->technisches;
-        // $technisches= Technisch::all();
-        // $woningHuis = Woning::with('technisches')->find($id);
+        // if ($woningHuis->indeling == null) {
+        //     // Als het null is, doorsturen naar de indeling.create route
+        //     return redirect()->route('indeling.create');
+        // }
         return view('woning.show', ['woningHuis' => $woningHuis]);
     }
 

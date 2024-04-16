@@ -11,7 +11,7 @@ class Woning extends Model
 
     public function woningTypes()
     {
-        return $this->hasMany(WoningType::class , 'woning_id' , 'id');
+        return $this->belongsTo(WoningType::class , 'woning_type_id' , 'id');
     }
 
     public function voorziningen()

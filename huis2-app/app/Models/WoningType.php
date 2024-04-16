@@ -9,8 +9,8 @@ class WoningType extends Model
 {
     use HasFactory;
 
-    public function woningen()
+    public function woning()
     {
-        return $this->belongsTo(Woning::class, 'woning_type_id' , 'id');
+        return $this->hasMany(Woning::class);
     }
 }

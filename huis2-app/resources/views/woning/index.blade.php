@@ -14,12 +14,17 @@
                 </select>
             </li>
             <li>
-                <select name="type" id="">
+                <form method="get" action="/">
+                     <input type="text" class="form-control" name="search" placeholder="Search for..." value="{{ $search }}">
+
+                <select name="filter" id="">
                     <option value=""> -- type -- </option>
-                    <option value="1">Huis</option>
-                    <option value="2">Appartement</option>
-                    <option value="3">Grond</option>
+                    <option value="Huis">Huis</option>
+                    <option value="Appartement">Appartement</option>
+                    <option value="Grond">Grond</option>
                 </select>
+                </form>
+           
             </li>
             <li>
                 <div class="product__flex--input">

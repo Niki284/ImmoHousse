@@ -57,19 +57,22 @@
                 Indelingen
             </span>
         </h2>
-        <?php 
-                        if($woningHuis->indeling == null ){
-                           return redirect()->route('indeling.create');
-                        }
-                    ?>
-        <ul>
+        
+       
+        <ul class="gegevens__list">
             <li>
                 Ruimte
             </li>
             <li>
                 Verdieping
         </ul>
-        <ul class="gegevens__list gegevens__list--tech">
+        <?php 
+                        if($woningHuis->indeling == null ){
+                           return redirect()->route('indeling.create');
+                        }
+                    ?>
+        <ul class="gegevens__list--tech">    
+           
             <li>
                 <span>
                     Badkamer:
@@ -150,8 +153,33 @@
                     {{ $woningHuis->indeling->toilet }}
                 </span>
             </li>
-
-    </div>
+            <li>
+                <span>
+                    Tuin:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->tuin }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Wasplaats:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->wasplaats }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Zolder:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->zolder }}
+                </span>
+            </li>
+        </ul>
+       
+        </div>
 
     <div class="gegevens">
         <div class="gegevens--flex">
