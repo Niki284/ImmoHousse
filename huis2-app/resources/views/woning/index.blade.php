@@ -17,14 +17,14 @@
                 <form method="get" action="/">
                      <input type="text" class="form-control" name="search" placeholder="Search for..." value="{{ $search }}">
 
-                <select name="filter" id="">
+             
+                </form>
+              <select name="filter" id="">
                     <option value=""> -- type -- </option>
                     <option value="Huis">Huis</option>
                     <option value="Appartement">Appartement</option>
                     <option value="Grond">Grond</option>
                 </select>
-                </form>
-           
             </li>
             <li>
                 <div class="product__flex--input">

@@ -18,21 +18,27 @@ class WoningController extends Controller
      */
     public function index()
     {
-        $woningHuis = Woning::query();
+        //
+        $woningHuis = Woning::all();
+        $search = request('search');
+        if($search) {
+            $woningHuis = Woning::where(
+                'size', 'like', '%' . $search . '%'
+            )->get();
+        }
+        // $filter = request('filter');
+        // if($filter) {
+        //     $woningHuis = WoningType::where(
+        //         ['woning_type', '>', '' . $filter . '']
+        //     )->get();
+        // }
+        // else {
+        //     $woningHuis = Woning::all();
+        // }
 
-    $search = request('search');
-    if($search) {
-        $woningHuis->where('size', 'like', '%' . $search . '%');
-    }
 
-    $filter = request('filter');
-    if($filter) {
-        $woningHuis->where('woning_type', $filter);
-    }
+        return view('woning.index', ['woningHuis' => $woningHuis ,  'search' => $search]);
 
-    $woningHuis = $woningHuis->get();
-
-    return view('woning.index', ['woningHuis' => $woningHuis ,  'search' => $search , 'filter' => $filter]);
     }
 
     /**
