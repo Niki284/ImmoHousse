@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndelingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductTypeController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\TechnischController;
 use App\Http\Controllers\VoorziningenController;
 use App\Http\Controllers\WoningController;
 use App\Http\Controllers\WoningTypeController;
+use App\Models\Indeling;
 use App\Models\Product;
 use App\Models\Woning;
 use App\Models\WoningType;
@@ -56,6 +58,10 @@ Route::get('/woning/{id}/addtechnisch', [TechnischController::class, 'create'])-
 Route::get('/woning/{id}/edittechnisch', [TechnischController::class, 'edit'])->middleware('auth');
 Route::put('/technisch/update/{id}', [TechnischController::class, 'update'])->middleware('auth')->name('technisch.update');
 
+Route::get('/woning/{id}/addindeling' , [IndelingController::class, 'create'])->middleware('auth');
+Route::get('/woning/{id}/editindeling', [IndelingController::class, 'edit'])->middleware('auth');
+Route::put('/indeling/update/{id}', [IndelingController::class, 'update'])->middleware('auth')->name('indeling.update');
+
 
 
 
@@ -82,6 +88,7 @@ Route::delete('/voorziningen/{voorziningId}', [VoorziningenController::class, 'd
 Route::resource('/technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
 Route::delete('/technisch/{technischId}', [TechnischController::class, 'destroy'])->middleware('auth');
 
+Route::resource('/indeling', IndelingController::class)->only(['index', 'show', 'create', 'store'])->names('indeling');
 
 
 

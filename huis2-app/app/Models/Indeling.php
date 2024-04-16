@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Indeling extends Model
 {
     use HasFactory;
+    
+    public function woning()
+    {
+        return $this->belongsTo(Woning::class);
+    }
 }

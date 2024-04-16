@@ -23,6 +23,10 @@ class Woning extends Model
     {
         return $this->hasOne(Technisch::class , 'woning_id' , 'id');
     }
+    public function indeling()
+    {
+        return $this->hasOne(Indeling::class , 'woning_id' , 'id');
+    }
 
     public function favorite()
     {

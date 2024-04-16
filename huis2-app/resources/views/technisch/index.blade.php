@@ -6,7 +6,7 @@
     <div class="formmini">
         <h1>Techniches</h1>
 
-        <ul class="list__render">
+        <ul class="list__render list__render--flex">
             @foreach ($technisch as $technisch)
                 <li class="list__render__item">
                     <form method="post" action="/technisch/update/{{$technisch->id}}">

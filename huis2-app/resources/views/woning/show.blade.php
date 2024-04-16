@@ -40,6 +40,140 @@
             </div>
         </div>
     </div>
+
+    <div class="gegevens">
+        <div class="gegevens--flex">
+            <a href="/woning/{{$woningHuis->id}}/addindeling">add Indeling</a>
+            <a href="/woning/{{$woningHuis->id}}/editindeling" class="gegevens--richt">edit Indeling</a>
+        </div>
+
+        <h2 class="gegevens__title">
+            <span class="gegevens__title--svg"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+            </span>
+            <span>
+                Indelingen
+            </span>
+        </h2>
+
+        <ul class="gegevens__list gegevens__list--tech">
+            <li>
+                Ruimte
+            </li>
+            <li>
+                Verdieping
+            </li>
+        </ul>
+        <ul class="gegevens__list--tech">
+            <li>
+                <span>
+                    Badkamer:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->badkamer  }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Berging:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->berging }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Bureau:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->bureau }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Garage:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->garage }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Keuken:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->keuken }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Living:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->living }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Parkeerplaats:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->parkeerplaats }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Slaapkamer:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->slaapkamer }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Terras:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->terras }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Toilet:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->toilet }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Tuin:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->tuin }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Wasplaats:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->wasplaats }}
+                </span>
+            </li>
+            <li>
+                <span>
+                    Zolder:
+                </span>
+                <span>
+                    {{ $woningHuis->indeling->zolder }}
+                </span>
+            </li>
+        </ul>
+
+    </div>
+
     <div class="gegevens">
         <div class="gegevens--flex">
             <a href="/woning/{{$woningHuis->id}}/addvoorziningen">add voorzing</a>
@@ -81,10 +215,10 @@
 
         <h2 class="gegevens__title">
             <span class="gegevens__title--svg"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z"/>
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-</svg>
-</span>
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                </svg>
+            </span>
             <span>
                 Technisch
             </span>
@@ -108,7 +242,7 @@
             </li>
             <li>
                 <span>
-                Renovatieverplichting:
+                    Renovatieverplichting:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->renovatieverplichting }}
@@ -116,7 +250,7 @@
             </li>
             <li>
                 <span>
-                Overstromingsgevoeligheid:
+                    Overstromingsgevoeligheid:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->overstromingsgevoeligheid }}
@@ -124,7 +258,7 @@
             </li>
             <li>
                 <span>
-                Afgebakende zone:
+                    Afgebakende zone:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->afgebakende_zone }}
@@ -132,7 +266,7 @@
             </li>
             <li>
                 <span>
-                G(ebouw) score:
+                    G(ebouw) score:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->G_ebouw_score }}
@@ -140,7 +274,7 @@
             </li>
             <li>
                 <span>
-                P(ebouw) score:
+                    P(ebouw) score:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->P_erceel_score }}
@@ -148,7 +282,7 @@
             </li>
             <li>
                 <span>
-                Certificaat elektriciteit:
+                    Certificaat elektriciteit:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->certificaat_elektriciteit }}
@@ -156,7 +290,7 @@
             </li>
             <li>
                 <span>
-                Lift:
+                    Lift:
                 </span>
                 <span>
                     {{ $woningHuis->technisches->lift }}
@@ -165,41 +299,41 @@
             <ul>
 
 
-            <h2 class="gegevens__title">
-                Energie
-        </h2>
-            <ul class="gegevens__list--tech">
-                <li>
-                    <span>
-                        EPC:
-                    </span>
-                    <span>
-                        {{ $woningHuis->technisches->EPC }}
-                    </span>
-                </li>
-            </ul>
                 <h2 class="gegevens__title">
-                Oppervlaktes en afmetingen
-            </h2>
+                    Energie
+                </h2>
                 <ul class="gegevens__list--tech">
-                <li>
-                    <span>
-                    Totale opp. grond:
-                    </span>
-                    <span>
-                        {{ $woningHuis->technisches->totale_opp_grond }}
-                    </span>
-                </li>
-                <li>
-                    <span>
-                    Bewoonbare opp. (ca.):
-                    </span>
-                    <span>
-                        {{ $woningHuis->technisches->bouw_opp_grond }}
-                    </span>
-                </li>
-            </ul>
-                
-        </div>
+                    <li>
+                        <span>
+                            EPC:
+                        </span>
+                        <span>
+                            {{ $woningHuis->technisches->EPC }}
+                        </span>
+                    </li>
+                </ul>
+                <h2 class="gegevens__title">
+                    Oppervlaktes en afmetingen
+                </h2>
+                <ul class="gegevens__list--tech">
+                    <li>
+                        <span>
+                            Totale opp. grond:
+                        </span>
+                        <span>
+                            {{ $woningHuis->technisches->totale_opp_grond }}
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            Bewoonbare opp. (ca.):
+                        </span>
+                        <span>
+                            {{ $woningHuis->technisches->bouw_opp_grond }}
+                        </span>
+                    </li>
+                </ul>
+
+    </div>
 
 </main>

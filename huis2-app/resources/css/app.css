@@ -306,12 +306,41 @@ border-right: none;
 .list__render {
     margin: 1rem 0;
 }
+.list__render--flex{
+    display: flex;
+    justify-content: space-between;
+}
+.list__render--flex li {
+   display: flex;
+   flex-direction: column;
+}
+.list__render--flex form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+    overflow-x: hidden;
+    height: 200px;
+}
+.list__render--flex label {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+}
+.list__render--flex button {
+    margin: 0.5rem 0;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    border-radius: 5px;
+}
 
 .list__render__item {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
-    border: 1px solid #000;
     margin: 0.5rem 0;
 }
 
