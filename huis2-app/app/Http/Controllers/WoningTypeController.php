@@ -39,7 +39,7 @@ class WoningTypeController extends Controller
     {
         //
         $woningType = new WoningType();
-        $woningType->woningType = $request->woningType;
+        $woningType->name = $request->name;
         $woningType->save();
         return redirect()->route('woningType.index')->with('success', 'WoningType is toegevoegd');
     }
@@ -80,7 +80,7 @@ class WoningTypeController extends Controller
     {
         //
         $woningType = WoningType::find($id);
-        $woningType->woningType = $request->woningType;
+        $woningType->name = $request->name;
         $woningType->save();
         return redirect()->route('woningType.index')->with('success', 'WoningType is aangepast');
     }

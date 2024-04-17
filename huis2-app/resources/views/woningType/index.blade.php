@@ -8,7 +8,7 @@
             <form method="post" action="/woningType/update/{{$type->id}}">
             @csrf
             @method('put')
-            <input type="text" name="woningType" value="{{$type->woningType}}">
+            <input type="text" name="woningType" value="{{$type->name}}" >
             </form>
         <form method="post" action="/woningType/{{$type->id}}">
             @csrf

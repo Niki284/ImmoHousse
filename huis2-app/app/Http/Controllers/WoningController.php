@@ -99,19 +99,20 @@ class WoningController extends Controller
      */
     public function show($id)
     {
-        //
+        // heer  render je detail pagina van woning met id
         $woningHuis = Woning::find($id);
         if ($woningHuis->indeling == $id  ) {
             // Als het null is, doorsturen naar de indeling.create route
-            
             return redirect()->route('indeling.create');
         }
 
         if ($woningHuis->technisch == $id  ) {
             // Als het null is, doorsturen naar de technisch.create route
-            
             return redirect()->route('technisch.create');
         }
+
+        // $woningHuis
+
         return view('woning.show', ['woningHuis' => $woningHuis]);
     }
 
