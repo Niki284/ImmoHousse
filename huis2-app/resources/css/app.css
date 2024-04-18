@@ -14,7 +14,52 @@
     --color-tertiary: ##f12535;
     --color-quaternary: #c1c5c8;
    
+}/*header*/
+.header__top {
+    background-color: black;
 }
+.header__top__list {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    margin: 0 auto;
+    max-width: 90rem;
+    padding: 0.7rem;
+}
+.header__top__list a:hover{
+    color: red;
+    text-decoration: none;
+}
+.header__max{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+.navigation__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header__top__list--richt {
+    color: black;
+    margin: 0 ;
+}
+.header__top__list--sosial {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+.header__top__list--sosial img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/*algemene content*/
 main{
     max-width: 90rem;
     margin: 0 auto;

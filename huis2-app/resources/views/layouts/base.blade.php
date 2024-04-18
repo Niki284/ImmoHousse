@@ -11,8 +11,10 @@
     <title>InnoHuis</title>
 </head>
 <body>
+    @include('navigation.nav')
     <main>
          @yield('content')
     </main>
+    @include('navigation.footer')
 </body>
 </html>
