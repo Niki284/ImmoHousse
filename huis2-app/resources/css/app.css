@@ -14,7 +14,8 @@
     --color-tertiary: ##f12535;
     --color-quaternary: #c1c5c8;
    
-}/*header*/
+}
+/*header*/
 .header__top {
     background-color: black;
 }
@@ -35,7 +36,7 @@
 .header__max{
     max-width: 90rem;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
 }
 .navigation__flex {
     display: flex;
@@ -57,14 +58,16 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    transition: 0.5s ease all;
+}
+.header__top__list--sosial img:hover {
+    opacity: 0.3;
+    scale: 0.85;
+    color: red;
 }
 
 /*algemene content*/
-main{
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 1rem;
-}
+
 
 .products {
     display: grid;
@@ -185,14 +188,18 @@ border-right: none;
 }
 
 
+.contaner,.gegevens {
+    max-width: 90rem;
+    margin: 0 auto;
+}
 
 /* Detal page */
 
 .detail__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    justify-items: center;
+    justify-items: stretch;
 }
 
 .detail__info__block {
@@ -205,7 +212,19 @@ border-right: none;
 .detail__foto {
     width: 100%;
     height: 100%;
+    grid-column: span 2;
     object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.detail__foto img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* height: 100%; */
+    /* max-height: 26rem; */
+    position: relative;
 }
 
 .detail__info {
@@ -236,7 +255,7 @@ border-right: none;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    max-width: 14rem;
+    border-bottom: 1px solid #eee;
 }
 .detail__knop .detail__btn  {
     background-color: red;
@@ -246,6 +265,7 @@ border-right: none;
     text-align: center;
     text-decoration: none;
     display: flex;
+    justify-content: center;
     border-radius: 5px;
 }
 .detail__btn:hover {
@@ -422,6 +442,12 @@ border-right: none;
 
 /* Gegevens */
 
+.maps {
+    background: #f5f0f0;
+    padding: 50px 0;
+    margin: 50px 0;
+}
+
 .gegevens {
     display: flex;
     flex-direction: column;
@@ -463,6 +489,13 @@ border-right: none;
     font-size: 1.5rem;
     margin: 1rem 0;
 }
+/* .gegevens__title::after {
+    content: '';
+    flex: 1;
+    background-color: red;
+    height: 1px;
+    margin-left: 1rem;
+} */
 
 .gegevens .gegevens__title--svg svg {
     margin-right: 0.5rem;
@@ -470,6 +503,14 @@ border-right: none;
     width: 3rem;
     padding: 0.5rem;
     border: 1px solid #000;
+}
+
+.maps_img  iframe{
+    width: 100%;
+    height:400px;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
 }
 
 .gegevens__list {

@@ -2,7 +2,6 @@
 
 @section('content')
 
-<main>
     <div class="contaner">
         <div class="detail__grid">
             <div class="detail__info">
@@ -40,6 +39,26 @@
             </div>
         </div>
     </div>
+
+<div class="maps">
+<div class="gegevens">
+    <h2 class="gegevens__title">
+            <span class="gegevens__title--svg"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+            </span>
+            <span>
+                Omgeving
+            </span>
+        </h2>
+            <div class="maps_img">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.073292073073!2d4.349630315707073!3d50.85033997953068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c3c3c3c3c3c3%3A0x3c3c3c3c3c3c3c3c!2sManneken%20Pis!5e0!3m2!1snl!2sbe!4v1632213660734!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        
+    </div>
+</div>
+  
+
 
     <div class="gegevens">
         <div class="gegevens--flex">
@@ -342,4 +361,5 @@
                         @endif
     </div>
 
-</main>
+
+@endsection
