@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bouwtype;
+use App\Models\NieuwType;
 use App\Models\Technisch;
 use App\Models\Woning;
 use App\Models\WoningType;
@@ -22,6 +23,7 @@ class WoningController extends Controller
         // heer kan je de woning re"nderen een filteren op basis van de zoekopdracht
         $woningHuis = Woning::query();
         $woningtypes = WoningType::all();
+        
         $search = request('search');
     
         if ($search) {
@@ -134,6 +136,7 @@ class WoningController extends Controller
         $woningHuis->refnummer = $request->refnummer;
         $woningHuis->woning_type_id = $request->woning_type_id;
         $woningHuis->bouwtype_id = $request->bouwtype_id;
+        $woningHuis->nieuwtype_id = $request->nieuwtype_id;
         if($request->hasFile('image')){
             $imagePath = $request->file('image')->store('images', 'public');
             $woningHuis->image = Storage::url($imagePath);
@@ -181,7 +184,7 @@ class WoningController extends Controller
     {
         //
         $woningHuis = Woning::find($id);
-        return view('woning.edit', ['woningHuis' => $woningHuis , 'woning_types'=>WoningType::all(), 'bouwtypes'=>Bouwtype::all()]);
+        return view('woning.edit', ['woningHuis' => $woningHuis , 'woning_types'=>WoningType::all(), 'bouwtypes'=>Bouwtype::all() , 'nieuwTypes'=>NieuwType::all()]);
     }
 
     /**

@@ -12,12 +12,12 @@ class NieuwTypeController extends Controller
     public function index()
     {
         $nieuwTypes = NieuwType::all();
-        return view('nieuwTypes.index', compact('nieuwTypes'));
+        return view('nieuwtype.index', compact('nieuwTypes'));
     }
 
     public function create()
     {
-        return view('nieuwTypes.create');
+        return view('nieuwtype.create');
     }
 
     public function store(Request $request)
@@ -25,7 +25,7 @@ class NieuwTypeController extends Controller
         $nieuwType = new NieuwType();
         $nieuwType->name = $request->name;
         $nieuwType->save();
-        return redirect()->route('nieuwTypes.index')->with('message', 'NieuwType is toegevoegd');
+        return redirect()->route('nieuwtype.index')->with('message', 'NieuwType is toegevoegd');
     }
 
     public function edit($id)
@@ -39,13 +39,12 @@ class NieuwTypeController extends Controller
         $nieuwType = NieuwType::find($id);
         $nieuwType->name = $request->name;
         $nieuwType->save();
-        return redirect()->route('nieuwTypes.index')->with('message', 'NieuwType is aangepast');
+        return redirect()->route('nieuwtype.index')->with('message', 'NieuwType is aangepast');
     }
 
-    public function destroy($id)
+    public function destroy($type)
     {
-        $nieuwType = NieuwType::find($id);
-        $nieuwType->delete();
-        return redirect()->route('nieuwTypes.index')->with('message', 'NieuwType is verwijderd');
+        NieuwType::destroy($type);
+        return redirect()->route('nieuwtype.index')->with('message', 'NieuwType is verwijderd');
     }
 }

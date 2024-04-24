@@ -9,6 +9,7 @@ use App\Http\Controllers\VoorziningenController;
 use App\Http\Controllers\WoningController;
 use App\Http\Controllers\WoningTypeController;
 use App\Models\Bouwtype;
+use App\Models\NieuwType;
 use App\Models\Woning;
 use App\Models\WoningType;
 use Illuminate\Support\Facades\Route;
@@ -25,12 +26,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome' , ['woningHuis' => Woning::all() , 'woning_types'=>WoningType::all(), 'bouwtypes'=>Bouwtype::all()]);
+    return view('welcome' , ['woningHuis' => Woning::all() , 'woning_types'=>WoningType::all(), 'bouwtypes'=>Bouwtype::all(), 'nieuwTypes'=>NieuwType::all()]);
 });
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard' , ['woningHuis' => Woning::all() , 'woning_types'=>WoningType::all(), 'bouwtypes'=>Bouwtype::all()]);
+    return view('dashboard' , ['woningHuis' => Woning::all() , 'woning_types'=>WoningType::all(), 'bouwtypes'=>Bouwtype::all(), 'nieuwTypes'=>NieuwType::all()]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -59,12 +60,12 @@ Route::delete('/dashboard/woningType/{typeId}', [WoningTypeController::class, 'd
 Route::resource('/dashboard/bouwtype', BouwtypeController::class)->only(['index', 'show', 'create', 'store']);
 Route::post('/dashboard/bouwtype/store', [BouwtypeController::class, 'store'])->Middleware('auth');
 Route::put('/dashboard/bouwtype/update/{bouwtype}', [BouwtypeController::class, 'update'])->middleware('auth');
-Route::delete('/dashboard/bouwType/{typeId}', [BouwtypeController::class, 'destroy'])->middleware('auth');
+Route::delete('/dashboard/bouwtype/{typeId}', [BouwtypeController::class, 'destroy'])->middleware('auth');
 
-// Route::resource('/dashboard/nieuwType', NieuwTypeController::class)->only(['index', 'show', 'create', 'store']);
-// Route::post('/dashboard/nieuwtType/store', [NieuwTypeController::class, 'store'])->Middleware('auth');
-// Route::put('/dashboard/nieuwType/update/{nieuwType}', [NieuwTypeController::class, 'update'])->middleware('auth');
-// Route::delete('/dashboard/nieuwType/{typeId}', [NieuwTypeController::class, 'destroy'])->middleware('auth');
+Route::resource('/dashboard/nieuwtype', NieuwTypeController::class)->only(['index', 'show', 'create', 'store']);
+Route::post('/dashboard/nieuwtype/store', [NieuwTypeController::class, 'store'])->Middleware('auth');
+Route::put('/dashboard/nieuwtype/update/{nieuwType}', [NieuwTypeController::class, 'update'])->middleware('auth');
+Route::delete('/dashboard/nieuwtype/{typeId}', [NieuwTypeController::class, 'destroy'])->middleware('auth');
 
 /* Guest routes */
 Route::resource('/woning', WoningController::class)->only(['index', 'show']);

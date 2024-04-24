@@ -75,6 +75,11 @@
                                         @endforeach
                                     </select>
 
+                                    <select name="nieuwtype_id" id="">
+                                        @foreach($nieuwTypes as $categorie)
+                                        <option value="{{$categorie->id}}">{{$categorie->name}}</option>
+                                        @endforeach
+                                    </select>
                                     <button type="submit" class="form__categorie__btn">Add</button>
 
                                 </form>

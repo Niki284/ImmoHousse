@@ -5,7 +5,7 @@
     <div class="formmini">
         <h1>Voeg hier jouw woning type toe</h1>
 
-        <form action="/dashboard/nieuwType/store" method="POST" class="form__categorie">
+        <form action="/dashboard/nieuwtype/store" method="POST" class="form__categorie">
             @csrf 
             <div class="form-group">
                 <label for="name">Nieu type</label>
