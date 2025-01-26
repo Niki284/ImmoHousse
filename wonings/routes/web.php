@@ -94,7 +94,8 @@ require __DIR__.'/auth.php';
 // Route::delete('/bouwtype/{bouwtypeId}', [BouwtypeController::class, 'destroy'])->middleware('auth');
 
 
-// Route::resource('/technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
-// Route::delete('/technisch/{technischId}', [TechnischController::class, 'destroy'])->middleware('auth');
+Route::resource('/technisch', TechnischController::class)->only(['index', 'show', 'create', 'store'])->names('technisch');
+Route::get('/woning/{id}/technisch/edit', [TechnischController::class, 'edit'])->middleware('auth');
+Route::delete('/technisch/{technischId}', [TechnischController::class, 'destroy'])->middleware('auth');
 
-// Route::resource('/indeling', IndelingController::class)->only(['index', 'show', 'create', 'store'])->names('indeling');
+Route::resource('/indeling', IndelingController::class)->only(['index', 'show', 'create', 'store'])->names('indeling');
